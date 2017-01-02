@@ -17,14 +17,14 @@ function addApiHeaders(req, res, totalCount) {
   let links = [];
   // First & prev pages
   if (currentPage > 1) {
-    links.push(`${req.path}?${paramString}&page=1; rel=first`);
-    links.push(`${req.path}?${paramString}&page=${currentPage - 1}; rel=prev`);
+    links.push(`${req.path}?${paramString}&page=1; rel="first"`);
+    links.push(`${req.path}?${paramString}&page=${currentPage - 1}; rel="prev"`);
   }
 
   // Next and last pages
   if (currentPage < lastPage) {
-    links.push(`${req.path}?${paramString}&page=${currentPage + 1}; rel=next`);
-    links.push(`${req.path}?${paramString}&page=${lastPage}; rel=last`);
+    links.push(`${req.path}?${paramString}&page=${currentPage + 1}; rel="next"`);
+    links.push(`${req.path}?${paramString}&page=${lastPage}; rel="last"`);
   }
 
   res.set('total_count', totalCount);
