@@ -28,7 +28,7 @@ function addApiHeaders(req, res, totalCount) {
   }
 
   res.set('total_count', totalCount);
-  res.set('links', links);
+  res.set('link', links);
 }
 
 module.exports = addApiHeaders;
