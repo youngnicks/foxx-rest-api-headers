@@ -19,14 +19,14 @@ function addApiHeaders(req, res, totalCount) {
   let links = [];
   // First & prev pages
   if (currentPage > 1) {
-    links.push(`${req.path}?page=1${paramString}; rel="first"`);
-    links.push(`${req.path}?page=${currentPage - 1}${paramString}; rel="prev"`);
+    links.push(`<${req.path}?page=1${paramString}>; rel="first"`);
+    links.push(`<${req.path}?page=${currentPage - 1}${paramString}>; rel="prev"`);
   }
 
   // Next and last pages
   if (currentPage < lastPage) {
-    links.push(`${req.path}?page=${currentPage + 1}${paramString}; rel="next"`);
-    links.push(`${req.path}?page=${lastPage}${paramString}; rel="last"`);
+    links.push(`<${req.path}?page=${currentPage + 1}${paramString}>; rel="next"`);
+    links.push(`<${req.path}?page=${lastPage}${paramString}>; rel="last"`);
   }
 
   res.set('total_count', totalCount);
