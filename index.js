@@ -3,8 +3,8 @@
 const _ = require('lodash');
 
 function addApiHeaders(req, res, totalCount) {
-  const currentPage = req.queryParams.page || 1;
-  const perPage = req.queryParams.per_page || 30;
+  const currentPage = parseInt(req.queryParams.page) || 1;
+  const perPage = parseInt(req.queryParams.per_page) || 30;
   const lastPage = Math.ceil(totalCount / perPage);
 
   // Build REST headers
